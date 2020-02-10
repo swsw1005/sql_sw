@@ -1,6 +1,6 @@
 select * from tab;
 
---ºñ¹Ð¹øÈ£ º¯°æ : java00 -> 123
+--ë¹„ë°€ë²ˆí˜¸ ë³€ê²½ : java00 -> 123
 alter user java00 IDENTIFIED by 123;
 
 alter user java00 IDENTIFIED by java00;

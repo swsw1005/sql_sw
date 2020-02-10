@@ -19,6 +19,8 @@ select title as 제목 ,content as 내용 from board;
 select title 제목, content 내용 from board where writer = 'lee';
 --------------------------------------------------------
 
+-- 중복없이 데이터 불러오기
+select distinct writer from board;
 
 
 

@@ -1,11 +1,11 @@
--- 6. °Ô½ÃÆÇ Å×ÀÌºí Á¦°Å
+-- 6. ê²Œì‹œíŒ í…Œì´ë¸” ì œê±°
 Drop Table board Cascade Constraints;
--- ½ÃÄö½º Á¦°Å ( ¾Æ·¡¿¡ Create°¡ »ı±â¸é À§¿¡´Â DropÀÌ »ı±ä´Ù )
+-- ì‹œí€€ìŠ¤ ì œê±° ( ì•„ë˜ì— Createê°€ ìƒê¸°ë©´ ìœ„ì—ëŠ” Dropì´ ìƒê¸´ë‹¤ )
 Drop SEQUENCE board_seq;
 
--- °Ô½ÃÆÇ Å×ÀÌºí »ı¼º
+-- ê²Œì‹œíŒ í…Œì´ë¸” ìƒì„±
 Create table board(
-    no Number Constraint board_no_pk Primary Key, --Constraint : Á¦¾à Á¶°Ç ÀÌ¸§ ÁöÁ¤
+    no Number Constraint board_no_pk Primary Key, --Constraint : ì œì•½ ì¡°ê±´ ì´ë¦„ ì§€ì •
     title Varchar2(300) Constraint board_title_nn Not Null,
     content Varchar2(2000) Constraint board_content_nn Not Null,
     writer Varchar2(30) Constraint board_writer_nn Not Null,
@@ -14,5 +14,5 @@ Create table board(
     replyCnt Number Default 0
 );
 
---°Ô½ÃÆÇ ±Û¹øÈ£¿¡ »ç¿ëÇÒ ½ÃÄö½º »ı¼º
+--ê²Œì‹œíŒ ê¸€ë²ˆí˜¸ì— ì‚¬ìš©í•  ì‹œí€€ìŠ¤ ìƒì„±
 Create SEQUENCE board_seq;

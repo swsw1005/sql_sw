@@ -4,16 +4,16 @@ CREATE table member(
     id varchar2(20) primary key,
     pw varchar2(20) not null,
     name varchar2(30) not null,
-    gender varchar2(6) not null check(gender in('³²ÀÚ','¿©ÀÚ')),
+    gender varchar2(6) not null check(gender in('ë‚¨ì','ì—¬ì')),
     birth date not null,
     tel varchar2(13),
     email varchar2(50) not null,
-    regdate date default sysdate, --È¸¿ø°¡ÀÔÀÏ // sysdate : ÇöÀç³¯Â¥
-    condate date default sysdate, --ÃÖ±ÙÁ¢¼ÓÀÏ // default : ±âº»°ª
-    status varchar2(6) default 'Á¤»ó' check (status in('Á¤»ó','°­Åğ','Å»Åğ','ÈŞ¸é')),
+    regdate date default sysdate, --íšŒì›ê°€ì…ì¼ // sysdate : í˜„ì¬ë‚ ì§œ
+    condate date default sysdate, --ìµœê·¼ì ‘ì†ì¼ // default : ê¸°ë³¸ê°’
+    status varchar2(6) default 'ì •ìƒ' check (status in('ì •ìƒ','ê°•í‡´','íƒˆí‡´','íœ´ë©´')),
     photo varchar2(50),
     newMsgcnt number default 0,
-    grade number(2) default 1 -- 1:ÀÏ¹İÈ¸¿ø, 9:°ü¸®ÀÚ // references : foreign key
+    grade number(2) default 1 -- 1:ì¼ë°˜íšŒì›, 9:ê´€ë¦¬ì // references : foreign key
 );
 
 
@@ -25,13 +25,13 @@ CREATE table member(
     id varchar(20) primary key,
     pw varchar(20) not null,
     name varchar(30) not null,
-    gender varchar(6) not null check(gender in('³²ÀÚ','¿©ÀÚ')),
+    gender varchar(6) not null check(gender in('ë‚¨ì','ì—¬ì')),
     birth date not null,
     tel varchar(13),
     email varchar(50) not null,
     regdate datetime default CURRENT_TIMESTAMP, 
     condate datetime default CURRENT_TIMESTAMP,
-    status varchar(6) default 'Á¤»ó' check (status in('Á¤»ó','°­Åğ','Å»Åğ','ÈŞ¸é')),
+    status varchar(6) default 'ì •ìƒ' check (status in('ì •ìƒ','ê°•í‡´','íƒˆí‡´','íœ´ë©´')),
     photo varchar(50),
     newMsgcnt int default 0,
     grade int(2) default 1 references grade.gradeno
