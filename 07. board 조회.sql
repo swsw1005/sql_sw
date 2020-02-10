@@ -1,17 +1,17 @@
 
--- ÀÛ¼ºÀÚ lee µ¥ÀÌÅÍ °¡Á®¿À±â
+-- ì‘ì„±ì lee ë°ì´í„° ê°€ì ¸ì˜¤ê¸°
 select * from board
 where writer = 'kim';
---0.005ÃÊ
+--0.005ì´ˆ
 
 
--- board¿¡ ÀÖ´Â µ¥ÀÌÅÍ¸¦ ´Ù½Ã board¿¡ ÀÔ·Â
--- no´Â nextval·Î
+-- boardì— ìˆëŠ” ë°ì´í„°ë¥¼ ë‹¤ì‹œ boardì— ì…ë ¥
+-- noëŠ” nextvalë¡œ
 insert into board(no, title, content, writer) 
 (select board_seq.nextval, title, content, writer from board);
--- ¹İº¹ÇÏ¸é º¹»çÇÏ´Â °ªÀÌ °è¼Ó 2¹è·Î...
+-- ë°˜ë³µí•˜ë©´ ë³µì‚¬í•˜ëŠ” ê°’ì´ ê³„ì† 2ë°°ë¡œ...
 
--- number¿¡ 4ÀÚ¸® Á¦ÇÑ...»èÁ¦ÇØº¸ÀÚ
+-- numberì— 4ìë¦¬ ì œí•œ...ì‚­ì œí•´ë³´ì
 alter table board modify no number;
 
 
@@ -20,10 +20,10 @@ commit;
 select count(*) from board;
 
 
---ÀÎµ¦½º »ı¼º  ±âÁØ writer
---unique index  ÀÎµ¦½º ¸¸µå´Â Å°°ª¿¡  Áßº¹µ¥ÀÌÅÍ ¾øÀ½
--- db Æ©´×¿¡ Áß¿äÇÔ. ÃÖ¿ì¼±
---Áßº¹°ªÀÖ´Â ÄÃ·³Àº  ÀÏ¹İ ÀÎµ¦½º
+--ì¸ë±ìŠ¤ ìƒì„±  ê¸°ì¤€ writer
+--unique index  ì¸ë±ìŠ¤ ë§Œë“œëŠ” í‚¤ê°’ì—  ì¤‘ë³µë°ì´í„° ì—†ìŒ
+-- db íŠœë‹ì— ì¤‘ìš”í•¨. ìµœìš°ì„ 
+--ì¤‘ë³µê°’ìˆëŠ” ì»¬ëŸ¼ì€  ì¼ë°˜ ì¸ë±ìŠ¤
 drop index idx_board_writer;
 
 create  index  idx_board_writer

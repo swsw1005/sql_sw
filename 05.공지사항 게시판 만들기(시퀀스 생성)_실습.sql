@@ -1,87 +1,87 @@
 
-¸í·ÉÀÇ 1 Çà¿¡¼­ ½ÃÀÛÇÏ´Â Áß ¿À·ù ¹ß»ı -
+ëª…ë ¹ì˜ 1 í–‰ì—ì„œ ì‹œì‘í•˜ëŠ” ì¤‘ ì˜¤ë¥˜ ë°œìƒ -
 Insert into(no, title, content)
 values(notice_seq, aa, aaa)
-¿À·ù ¹ß»ı ¸í·ÉÇà: 1 ¿­: 13
-¿À·ù º¸°í -
-SQL ¿À·ù: ORA-00928: missing SELECT keyword
+ì˜¤ë¥˜ ë°œìƒ ëª…ë ¹í–‰: 1 ì—´: 13
+ì˜¤ë¥˜ ë³´ê³  -
+SQL ì˜¤ë¥˜: ORA-00928: missing SELECT keyword
 00928. 00000 -  "missing SELECT keyword"
 *Cause:    
 *Action:
 
-¸í·ÉÀÇ 1 Çà¿¡¼­ ½ÃÀÛÇÏ´Â Áß ¿À·ù ¹ß»ı -
+ëª…ë ¹ì˜ 1 í–‰ì—ì„œ ì‹œì‘í•˜ëŠ” ì¤‘ ì˜¤ë¥˜ ë°œìƒ -
 Insert into(no, title, content)
 values(1, aa, aaa)
-¿À·ù ¹ß»ı ¸í·ÉÇà: 1 ¿­: 13
-¿À·ù º¸°í -
-SQL ¿À·ù: ORA-00928: missing SELECT keyword
+ì˜¤ë¥˜ ë°œìƒ ëª…ë ¹í–‰: 1 ì—´: 13
+ì˜¤ë¥˜ ë³´ê³  -
+SQL ì˜¤ë¥˜: ORA-00928: missing SELECT keyword
 00928. 00000 -  "missing SELECT keyword"
 *Cause:    
 *Action:
 
-¸í·ÉÀÇ 1 Çà¿¡¼­ ½ÃÀÛÇÏ´Â Áß ¿À·ù ¹ß»ı -
+ëª…ë ¹ì˜ 1 í–‰ì—ì„œ ì‹œì‘í•˜ëŠ” ì¤‘ ì˜¤ë¥˜ ë°œìƒ -
 Insert into notice(no, title, content)
 values(1, aa, aaa)
-¿À·ù ¹ß»ı ¸í·ÉÇà: 2 ¿­: 15
-¿À·ù º¸°í -
-SQL ¿À·ù: ORA-00984: column not allowed here
+ì˜¤ë¥˜ ë°œìƒ ëª…ë ¹í–‰: 2 ì—´: 15
+ì˜¤ë¥˜ ë³´ê³  -
+SQL ì˜¤ë¥˜: ORA-00984: column not allowed here
 00984. 00000 -  "column not allowed here"
 *Cause:    
 *Action:
 
-¸í·ÉÀÇ 1 Çà¿¡¼­ ½ÃÀÛÇÏ´Â Áß ¿À·ù ¹ß»ı -
+ëª…ë ¹ì˜ 1 í–‰ì—ì„œ ì‹œì‘í•˜ëŠ” ì¤‘ ì˜¤ë¥˜ ë°œìƒ -
 Insert into notice(no, title, content)
 values(1, aa, aaa)
-¿À·ù ¹ß»ı ¸í·ÉÇà: 2 ¿­: 15
-¿À·ù º¸°í -
-SQL ¿À·ù: ORA-00984: column not allowed here
+ì˜¤ë¥˜ ë°œìƒ ëª…ë ¹í–‰: 2 ì—´: 15
+ì˜¤ë¥˜ ë³´ê³  -
+SQL ì˜¤ë¥˜: ORA-00984: column not allowed here
 00984. 00000 -  "column not allowed here"
 *Cause:    
 *Action:
 
-¸í·ÉÀÇ 1 Çà¿¡¼­ ½ÃÀÛÇÏ´Â Áß ¿À·ù ¹ß»ı -
+ëª…ë ¹ì˜ 1 í–‰ì—ì„œ ì‹œì‘í•˜ëŠ” ì¤‘ ì˜¤ë¥˜ ë°œìƒ -
 Insert into notice(no, title, content)
 values(1, aaaa, aaaaa)
-¿À·ù ¹ß»ı ¸í·ÉÇà: 2 ¿­: 17
-¿À·ù º¸°í -
-SQL ¿À·ù: ORA-00984: column not allowed here
+ì˜¤ë¥˜ ë°œìƒ ëª…ë ¹í–‰: 2 ì—´: 17
+ì˜¤ë¥˜ ë³´ê³  -
+SQL ì˜¤ë¥˜: ORA-00984: column not allowed here
 00984. 00000 -  "column not allowed here"
 *Cause:    
 *Action:
 
-1 Çà ÀÌ(°¡) »ğÀÔµÇ¾ú½À´Ï´Ù.
+1 í–‰ ì´(ê°€) ì‚½ì…ë˜ì—ˆìŠµë‹ˆë‹¤.
 
 
-¸í·ÉÀÇ 1 Çà¿¡¼­ ½ÃÀÛÇÏ´Â Áß ¿À·ù ¹ß»ı -
+ëª…ë ¹ì˜ 1 í–‰ì—ì„œ ì‹œì‘í•˜ëŠ” ì¤‘ ì˜¤ë¥˜ ë°œìƒ -
 Insert into notice(no, title, content)
 values(1, 'aa', 'aaa')
-¿À·ù º¸°í -
+ì˜¤ë¥˜ ë³´ê³  -
 ORA-00001: unique constraint (JAVA00.NOTICE_NO_PK) violated
 
 
-¸í·ÉÀÇ 4 Çà¿¡¼­ ½ÃÀÛÇÏ´Â Áß ¿À·ù ¹ß»ı -
+ëª…ë ¹ì˜ 4 í–‰ì—ì„œ ì‹œì‘í•˜ëŠ” ì¤‘ ì˜¤ë¥˜ ë°œìƒ -
 Insert into notice(no, title, content)
 values(notice_seq.nextval, 'bb', 'bbb')
-¿À·ù º¸°í -
+ì˜¤ë¥˜ ë³´ê³  -
 ORA-00001: unique constraint (JAVA00.NOTICE_NO_PK) violated
 
 
-1 Çà ÀÌ(°¡) »ğÀÔµÇ¾ú½À´Ï´Ù.
+1 í–‰ ì´(ê°€) ì‚½ì…ë˜ì—ˆìŠµë‹ˆë‹¤.
 
-Ä¿¹Ô ¿Ï·á.
+ì»¤ë°‹ ì™„ë£Œ.
 
-1 Çà ÀÌ(°¡) »ğÀÔµÇ¾ú½À´Ï´Ù.
-
-
-1 Çà ÀÌ(°¡) »ğÀÔµÇ¾ú½À´Ï´Ù.
+1 í–‰ ì´(ê°€) ì‚½ì…ë˜ì—ˆìŠµë‹ˆë‹¤.
 
 
-1 Çà ÀÌ(°¡) »ğÀÔµÇ¾ú½À´Ï´Ù.
+1 í–‰ ì´(ê°€) ì‚½ì…ë˜ì—ˆìŠµë‹ˆë‹¤.
 
 
-1 Çà ÀÌ(°¡) »ğÀÔµÇ¾ú½À´Ï´Ù.
+1 í–‰ ì´(ê°€) ì‚½ì…ë˜ì—ˆìŠµë‹ˆë‹¤.
 
 
-1 Çà ÀÌ(°¡) »ğÀÔµÇ¾ú½À´Ï´Ù.
+1 í–‰ ì´(ê°€) ì‚½ì…ë˜ì—ˆìŠµë‹ˆë‹¤.
 
-Ä¿¹Ô ¿Ï·á.
+
+1 í–‰ ì´(ê°€) ì‚½ì…ë˜ì—ˆìŠµë‹ˆë‹¤.
+
+ì»¤ë°‹ ì™„ë£Œ.

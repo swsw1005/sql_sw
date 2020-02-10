@@ -1,44 +1,44 @@
---Æò°¡ ¿¹Á¦
+--í‰ê°€ ì˜ˆì œ
 
---1. °Ô½ÃÆÇ ¸®½ºÆ®º¸±â
+--1. ê²Œì‹œíŒ ë¦¬ìŠ¤íŠ¸ë³´ê¸°
 select no, title, writer, writeDate, hit 
 from board order by no desc;
 
---2. °Ô½ÃÆÇ ±Û¾²±â
+--2. ê²Œì‹œíŒ ê¸€ì“°ê¸°
 insert into board(no, title, content, writer)
 values(board_seq.nextval, 'java', 'java content', 'kim');
 
---3. °Ô½ÃÆÇ ±Ûº¸±â	Á¶È¸¼ö 1Áõ°¡
---	´ñ±Û º¸±â Æ÷ÇÔ
+--3. ê²Œì‹œíŒ ê¸€ë³´ê¸°	ì¡°íšŒìˆ˜ 1ì¦ê°€
+--	ëŒ“ê¸€ ë³´ê¸° í¬í•¨
 select no, title, content, writer, writeDate, hit 
    from board;
 
-update board set hit = hit+1 where no = ±Û¹øÈ£;
+update board set hit = hit+1 where no = ê¸€ë²ˆí˜¸;
 
---4. °Ô½ÃÆÇ ±Û ¼öÁ¤
+--4. ê²Œì‹œíŒ ê¸€ ìˆ˜ì •
 update board set 
    title = 'oracle',
    content = 'java content', 
    writer='kim'
-   where no = ±Û¹øÈ£;
+   where no = ê¸€ë²ˆí˜¸;
 
---5.°Ô½ÃÆÇ ±Û »èÁ¦
-delete from board where no = ±Û¹øÈ£;
-
-
+--5.ê²Œì‹œíŒ ê¸€ ì‚­ì œ
+delete from board where no = ê¸€ë²ˆí˜¸;
 
 
---¿À¶óÅ¬ 1~14  sql ÀÀ¿ë
 
---select	1Àå
---SQL ´ÜÀÏÇà ÇÔ¼ö	2Àå
---SQL º¹¼öÇà ÇÔ¼ö	3Àå
---JOIN = ÂüÁ¶Å°	4Àå
---DML		6Àå 
+
+--ì˜¤ë¼í´ 1~14  sql ì‘ìš©
+
+--select	1ì¥
+--SQL ë‹¨ì¼í–‰ í•¨ìˆ˜	2ì¥
+--SQL ë³µìˆ˜í–‰ í•¨ìˆ˜	3ì¥
+--JOIN = ì°¸ì¡°í‚¤	4ì¥
+--DML		6ì¥ 
  --(insert update delete)
---Transation  	6Àå
---¼­ºêquery	10Àå
---°èÃşÇüquery	12Àå x
+--Transation  	6ì¥
+--ì„œë¸Œquery	10ì¥
+--ê³„ì¸µí˜•query	12ì¥ x
 
 
 

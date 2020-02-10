@@ -1,20 +1,20 @@
--- Å×ÀÌºí Á¦°Å - Á¦¾à Á¶°Ç°ú »ó°ü¾øÀÌ Áö¿î´Ù. : Foreign key
+-- í…Œì´ë¸” ì œê±° - ì œì•½ ì¡°ê±´ê³¼ ìƒê´€ì—†ì´ ì§€ìš´ë‹¤. : Foreign key
 drop table member cascade CONSTRAINTS;
 
--- µ¥ÀÌÅÍ ÀúÀå °´Ã¼ : Å×ÀÌºí
--- ÄÃ·³ µ¥ÀÌÅÍ Æ¯¼º: ¹®ÀÚ¿­ - varchar2(±æÀÌ), ¼ıÀÚ - number, ³¯Â¥ - date
--- Oracle 10g¿¡¼­ Oracle 11g ¹öÀüÀ¸·Î ¹Ù²î¸é¼­ ÇÑ±Û 3¹ÙÀÌÆ®
--- **** Á¦¾àÁ¶°Ç
--- µ¥ÀÌÅÍµéÀ» ½Äº°ÇÒ ¼ö ÀÖ´Â ÄÃ·³ -> primary key -> id
--- ²À ÀÔ·ÂÀ» ÇØ¾ß ÇÏ´Â Ç×¸ñ (not null) -> pw, name, gender, email
--- ¼ºº°Àº "³²ÀÚ", "¿©ÀÚ"¸¸ ÀÔ·Â °¡´É
--- ÀÌ¸ŞÀÏÀº Áßº¹µÇ¸é ¾ÈµÈ´Ù.
+-- ë°ì´í„° ì €ì¥ ê°ì²´ : í…Œì´ë¸”
+-- ì»¬ëŸ¼ ë°ì´í„° íŠ¹ì„±: ë¬¸ìì—´ - varchar2(ê¸¸ì´), ìˆ«ì - number, ë‚ ì§œ - date
+-- Oracle 10gì—ì„œ Oracle 11g ë²„ì „ìœ¼ë¡œ ë°”ë€Œë©´ì„œ í•œê¸€ 3ë°”ì´íŠ¸
+-- **** ì œì•½ì¡°ê±´
+-- ë°ì´í„°ë“¤ì„ ì‹ë³„í•  ìˆ˜ ìˆëŠ” ì»¬ëŸ¼ -> primary key -> id
+-- ê¼­ ì…ë ¥ì„ í•´ì•¼ í•˜ëŠ” í•­ëª© (not null) -> pw, name, gender, email
+-- ì„±ë³„ì€ "ë‚¨ì", "ì—¬ì"ë§Œ ì…ë ¥ ê°€ëŠ¥
+-- ì´ë©”ì¼ì€ ì¤‘ë³µë˜ë©´ ì•ˆëœë‹¤.
 CREATE TABLE member(
     id varchar2(20) PRIMARY KEY,
     pw varchar2(20) NOT NULL,
     name varchar2(30) NOT NULL,
     birth date,
-    gender varchar2(6) NOT NULL CHECK(gender in('³²ÀÚ','¿©ÀÚ')),
+    gender varchar2(6) NOT NULL CHECK(gender in('ë‚¨ì','ì—¬ì')),
     tel varchar2(13),
     email varchar2(50) NOT NULL UNIQUE , -- 010-7676-6236
     photo varchar2(50)

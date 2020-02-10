@@ -1,11 +1,11 @@
--- È¸¿ø°¡ÀÔ : id, pw, name, gender, birth, email - ÇÊ¼ö ÀÔ·Â
+-- íšŒì›ê°€ì… : id, pw, name, gender, birth, email - í•„ìˆ˜ ì…ë ¥
 Insert Into member(id, pw, name, gender, birth, email)
-values('test','1111','È«±æµ¿','³²ÀÚ','1990-10-01','test@naver.com');
+values('test','1111','í™ê¸¸ë™','ë‚¨ì','1990-10-01','test@naver.com');
 
--- °ü¸®ÀÚ --> grade Ç×¸ñÀÌ Ãß°¡µÇ¾î¾ß ÇÑ´Ù.
+-- ê´€ë¦¬ì --> grade í•­ëª©ì´ ì¶”ê°€ë˜ì–´ì•¼ í•œë‹¤.
 Insert Into member(id, pw, name, gender, birth, email, grade)
-values('admin','1111','°ü¸®ÀÚ','¿©ÀÚ','1990-10-01','test@naver.com', 9);
+values('admin','1111','ê´€ë¦¬ì','ì—¬ì','1990-10-01','test@naver.com', 9);
 
--- ¿ÏÀüÀû¿ë
--- commit : ½ÂÀÎ -> DB¿¡ ¿ÏÀü Àû¿ë
+-- ì™„ì „ì ìš©
+-- commit : ìŠ¹ì¸ -> DBì— ì™„ì „ ì ìš©
 commit;

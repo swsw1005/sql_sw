@@ -1,37 +1,37 @@
 
-create table member(  -- ¸â¹ö Å×ÀÌºí ÀÛ¼º
+create table member(  -- ë©¤ë²„ í…Œì´ë¸” ì‘ì„±
     id varchar2(20),
     pw varchar2(20),
     name varchar2(30),
-    -- ÇÑ±Û ÀÏº»¾î ÇÑÀÚ 2¹ÙÀÌÆ® °ãÄ§¹®Á¦,  ¿À¶óÅ¬Àº3¹ÙÀÌÆ®. 30 = 10±ÛÀÚ
+    -- í•œê¸€ ì¼ë³¸ì–´ í•œì 2ë°”ì´íŠ¸ ê²¹ì¹¨ë¬¸ì œ,  ì˜¤ë¼í´ì€3ë°”ì´íŠ¸. 30 = 10ê¸€ì
     birth date,
     gender varchar2(6),
     tel varchar2(13), --010-1234-5678
     email varchar2(50),
-    photo varchar2(50)  --¸¶Áö¸·¿¡ ¹İÁ¡ ¾²Áö¸»ÀÚ...
+    photo varchar2(50)  --ë§ˆì§€ë§‰ì— ë°˜ì  ì“°ì§€ë§ì...
 );
 
 
 
---È®ÀåµÈ ¸â¹ö Å×ÀÌºí »ı¼º
+--í™•ì¥ëœ ë©¤ë²„ í…Œì´ë¸” ìƒì„±
 create table member(
     id		varchar2(20) primary key,
     pw		varchar2(20) not null,
     name		varchar2(30) not null,
-    gender	varchar2(6) not null check(gender in('³²ÀÚ','¿©ÀÚ')),
+    gender	varchar2(6) not null check(gender in('ë‚¨ì','ì—¬ì')),
     birth       	date not null,
     tel        	varchar2(13),
     email      	varchar2(50) not null,
-    regDate     	date default sysdate,  --¿À¶óÅ¬ ½Ã½ºÅÛ³¯Â¥
+    regDate     	date default sysdate,  --ì˜¤ë¼í´ ì‹œìŠ¤í…œë‚ ì§œ
     conDate     	date default sysdate,
-    status      	varchar2(6) default 'Á¤»ó' check(status in('Á¤»ó','°­Åğ','Å»Åğ','ÈŞ¸é')),
+    status      	varchar2(6) default 'ì •ìƒ' check(status in('ì •ìƒ','ê°•í‡´','íƒˆí‡´','íœ´ë©´')),
     photo       	varchar2(50) default '/upload/member2/nolmage.png',
     newMsgCnt   	number default 0,
     grade       	number(2) default 1
 );
 
 
--- °Ô½ÃÆÇ ±Û ÀÛ¼º ¿¹½Ã
+-- ê²Œì‹œíŒ ê¸€ ì‘ì„± ì˜ˆì‹œ
 insert into board(no, title, content, writer)
 values(1,'oracle', 'oracle jjang','lee');
 
@@ -42,9 +42,9 @@ commit;
 --------------------------------------------
 
 
--- ½ÃÄö½º Á¦°Å
+-- ì‹œí€€ìŠ¤ ì œê±°
 drop sequence board_seq;
--- °Ô½ÃÆÇ ±Û¹øÈ£¿¡ »ç¿ëÇÒ ½ÃÄö½º
+-- ê²Œì‹œíŒ ê¸€ë²ˆí˜¸ì— ì‚¬ìš©í•  ì‹œí€€ìŠ¤
 create sequence board_seq
 increment by 1
 start with 1;
@@ -54,14 +54,14 @@ start with 1;
 
 
 
---ÀÏ¹İ°Ô½ÃÆÇ¿¡ µ¥ÀÌÅÍ ³Ö±â
---±Û¹øÈ£ °è¼Ó Áõ°¡µÇ´Â °´Ã¼ »ç¿ë (½ÃÄö½º 8Àå)
--- ½ÃÄö½ºÀÇ ´ÙÀ½¹øÈ£ ¹Ş¾Æ³»±â board_seq.nextval
+--ì¼ë°˜ê²Œì‹œíŒì— ë°ì´í„° ë„£ê¸°
+--ê¸€ë²ˆí˜¸ ê³„ì† ì¦ê°€ë˜ëŠ” ê°ì²´ ì‚¬ìš© (ì‹œí€€ìŠ¤ 8ì¥)
+-- ì‹œí€€ìŠ¤ì˜ ë‹¤ìŒë²ˆí˜¸ ë°›ì•„ë‚´ê¸° board_seq.nextval
 insert into board(no, title, content, writer)
-values(1,'Á¦¸ñ','³»¿ë','ÀÛ¼ºÀÚ');
--- °è¼Ó Áõ°¡µÇ´Â no  Áß°£¿¡ ºüÁ®µµ Ã¤¿ìÁö ¾Ê´Â´Ù.
+values(1,'ì œëª©','ë‚´ìš©','ì‘ì„±ì');
+-- ê³„ì† ì¦ê°€ë˜ëŠ” no  ì¤‘ê°„ì— ë¹ ì ¸ë„ ì±„ìš°ì§€ ì•ŠëŠ”ë‹¤.
 insert into board(no, title, content, writer)
-values(board_seq.nextval,'Á¦¸ñ','³»¿ë','ÀÛ¼ºÀÚ');
+values(board_seq.nextval,'ì œëª©','ë‚´ìš©','ì‘ì„±ì');
 
 commit;
 
@@ -69,7 +69,7 @@ commit;
 --------------------------------------------
 
 drop table notice;
--- °øÁö»çÇ× Å×ÀÌºí »ı¼º
+-- ê³µì§€ì‚¬í•­ í…Œì´ë¸” ìƒì„±
 create table notice(
     no          number  constraint notice_no_pk    primary key,
     title       varchar2(300)    constraint notice_title_nn not null, 
@@ -85,13 +85,13 @@ create table notice(
 
 
 drop SEQUENCE notice_seq;
---½ÃÄö½º ¸¸µé±â
+--ì‹œí€€ìŠ¤ ë§Œë“¤ê¸°
 create sequence notice_seq
 increment by 1
 start with 1;
 
---ÈÄ¼Ó ±Û ÀÔ·Â
+--í›„ì† ê¸€ ì…ë ¥
 insert into notice(no, title, content)
-values(notice_seq.nextval,'°øÁö»çÇ×','³»¿ë');
+values(notice_seq.nextval,'ê³µì§€ì‚¬í•­','ë‚´ìš©');
 
 

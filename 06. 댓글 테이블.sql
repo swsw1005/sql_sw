@@ -1,9 +1,9 @@
--- 6. °Ô½ÃÆÇ Å×ÀÌºí Á¦°Å
+-- 6. ê²Œì‹œíŒ í…Œì´ë¸” ì œê±°
 Drop Table board_rep Cascade Constraints;
 
 Drop Sequence board_rep_seq;
 
--- °Ô½ÃÆÇ Å×ÀÌºí »ı¼º
+-- ê²Œì‹œíŒ í…Œì´ë¸” ìƒì„±
 Create table board_rep(
     rno number Constraint board_rno_pk primary key,
     no number references board(no),
@@ -12,7 +12,7 @@ Create table board_rep(
     writeDate date default sysdate
     );
 
---°Ô½ÃÆÇ ±Û¹øÈ£¿¡ »ç¿ëÇÒ ½ÃÄö½º »ı¼º
+--ê²Œì‹œíŒ ê¸€ë²ˆí˜¸ì— ì‚¬ìš©í•  ì‹œí€€ìŠ¤ ìƒì„±
 Create SEQUENCE board_rep_seq;
 
 Insert Into board(no, title, content, writer)

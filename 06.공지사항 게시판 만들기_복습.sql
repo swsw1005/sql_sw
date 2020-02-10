@@ -1,8 +1,8 @@
---Å×ÀÌºí Á¦°Å, ½ÃÄö½º Á¦°Å
+--í…Œì´ë¸” ì œê±°, ì‹œí€€ìŠ¤ ì œê±°
 Drop Table notice cascade CONSTRAINTS;
 Drop SEQUENCE notice_seq;
 
---Å×ÀÌºí »ı¼º
+--í…Œì´ë¸” ìƒì„±
 Create Table notice(
     no number constraint notice_no_pk primary key,
     title varchar(300) constraint notice_title_nn not null,
@@ -13,24 +13,24 @@ Create Table notice(
     updateDate Date default sysdate
 );
 
---½ÃÄö½º »ı¼º
+--ì‹œí€€ìŠ¤ ìƒì„±
 create Sequence notice_seq;
---»ùÇÃµ¥ÀÌÅÍ - insert
---ÇöÀçºÎÅÍ °è¼Ó °øÁö
+--ìƒ˜í”Œë°ì´í„° - insert
+--í˜„ì¬ë¶€í„° ê³„ì† ê³µì§€
 insert into notice(no, title, content)
-values(notice_seq.nextval, '»çÀÌÆ® ¿ÀÇÂ', 'ÁÁÀº ±Û ºÎÅ¹µå¸³´Ï´Ù.');
+values(notice_seq.nextval, 'ì‚¬ì´íŠ¸ ì˜¤í”ˆ', 'ì¢‹ì€ ê¸€ ë¶€íƒë“œë¦½ë‹ˆë‹¤.');
 
---¾ÕÀ¸·Î °øÁö - ¿¹¾à °øÁö - ÇöÀç ³¯Â¥ 2020-02-04
+--ì•ìœ¼ë¡œ ê³µì§€ - ì˜ˆì•½ ê³µì§€ - í˜„ì¬ ë‚ ì§œ 2020-02-04
 insert into notice(no, title, content, startDate)
-values(notice_seq.nextval, '3¿ù´ŞÀº ½¬´Â³¯ÀÌ ¾ø½À´Ï´Ù.', 'ÁÁÀº ±Û ºÎÅ¹µå¸³´Ï´Ù.', '2020-02-11');
+values(notice_seq.nextval, '3ì›”ë‹¬ì€ ì‰¬ëŠ”ë‚ ì´ ì—†ìŠµë‹ˆë‹¤.', 'ì¢‹ì€ ê¸€ ë¶€íƒë“œë¦½ë‹ˆë‹¤.', '2020-02-11');
 
---ÇöÀç °øÁö - ÀÏÁÖÀÏ ±â°£À¸·Î ÇÑ °øÁö
+--í˜„ì¬ ê³µì§€ - ì¼ì£¼ì¼ ê¸°ê°„ìœ¼ë¡œ í•œ ê³µì§€
 insert into notice(no, title, content, endDate)
-values(notice_seq.nextval, 'Ãâ¼®ÀÌº¥Æ®', 'ÁÁÀº ±Û ºÎÅ¹µå¸³´Ï´Ù.', '2020-02-11');
+values(notice_seq.nextval, 'ì¶œì„ì´ë²¤íŠ¸', 'ì¢‹ì€ ê¸€ ë¶€íƒë“œë¦½ë‹ˆë‹¤.', '2020-02-11');
 
---Áö³­ °øÁö - 
+--ì§€ë‚œ ê³µì§€ - 
 insert into notice(no, title, content, startDate, endDate)
-values(notice_seq.nextval, '½Å³âÀÎ»ç', 'ÁÁÀº ±Û ºÎÅ¹µå¸³´Ï´Ù.','2020-01-01', '2020-01-30');
+values(notice_seq.nextval, 'ì‹ ë…„ì¸ì‚¬', 'ì¢‹ì€ ê¸€ ë¶€íƒë“œë¦½ë‹ˆë‹¤.','2020-01-01', '2020-01-30');
 
---commit - ¿ÏÀü Àû¿ë
+--commit - ì™„ì „ ì ìš©
 commit

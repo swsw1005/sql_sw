@@ -1,10 +1,10 @@
--- ÇöÀç À¯È¿ÇÑ °øÁö¸¸ º¸±â
+-- í˜„ìž¬ ìœ íš¨í•œ ê³µì§€ë§Œ ë³´ê¸°
 create or replace view notice_pres
 as
 select  title, content,startdate, enddate from NOTICE
 where startDate <= sysdate and sysdate <= enddate+1 ;
 
--- ÇöÀç À¯È¿ÇÑ °øÁö¸¸ º¸±â + ÃÖ½Å°øÁöºÎÅÍ
+-- í˜„ìž¬ ìœ íš¨í•œ ê³µì§€ë§Œ ë³´ê¸° + ìµœì‹ ê³µì§€ë¶€í„°
 create or replace view notice_pres
 as
 select  title, content,startdate, enddate from NOTICE
@@ -12,7 +12,7 @@ where startDate <= sysdate and sysdate <= enddate+1
 order by startdate desc;
 
 
---lee °Ô½Ã±Û ÃÖ½Å±Û ¼ø¼­
+--lee ê²Œì‹œê¸€ ìµœì‹ ê¸€ ìˆœì„œ
 create or replace view board_lee
 as
 select  title, content,writedate,hit from board
@@ -20,7 +20,7 @@ where writer = 'lee'
 order by writedate desc;
 
 
---park °Ô½Ã±Û ÃÖ½Å±Û ¼ø¼­
+--park ê²Œì‹œê¸€ ìµœì‹ ê¸€ ìˆœì„œ
 create or replace view board_park
 as
 select  title, content,writedate,hit from board
@@ -28,7 +28,7 @@ where writer = 'park'
 order by writedate desc;
 
 
---kim °Ô½Ã±Û ÃÖ½Å±Û ¼ø¼­
+--kim ê²Œì‹œê¸€ ìµœì‹ ê¸€ ìˆœì„œ
 create or replace view board_kim
 as
 select  title, content,writedate,hit from board

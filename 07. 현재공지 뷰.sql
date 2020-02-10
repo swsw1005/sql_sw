@@ -1,24 +1,24 @@
---ºä »ı¼º
--- ÇöÀç ÁøÇà °øÁö
+--ë·° ìƒì„±
+-- í˜„ì¬ ì§„í–‰ ê³µì§€
 -- startdate<- sysdate <-enddate
 
 select no, title, startdate, enddate from NOTICE
 where startDate <= sysdate and sysdate <= enddate+1 ;
 
--- ºäÅ×ÀÌºí »ı¼º
---°ü¸®ÀÚ ±ÇÇÑ ¾øÀ½ ¿À·ù
--- create view ±ÇÇÑ Áà¾ßÇÔ
+-- ë·°í…Œì´ë¸” ìƒì„±
+--ê´€ë¦¬ì ê¶Œí•œ ì—†ìŒ ì˜¤ë¥˜
+-- create view ê¶Œí•œ ì¤˜ì•¼í•¨
 --grant create view to java01;
 
 
 drop view notice_pres;
 
---view Å×ÀÌºí »ı¼º
+--view í…Œì´ë¸” ìƒì„±
 
 create or replace view notice_pres
 as
 select  title, content,startdate, enddate from NOTICE
 where startDate <= sysdate and sysdate <= enddate+1 ;
 
--- view Å×ÀÌºí Á¶È¸
+-- view í…Œì´ë¸” ì¡°íšŒ
 select * from notice_pres;

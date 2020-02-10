@@ -1,14 +1,14 @@
---ÇöÀç°øÁö - ÀÏÁÖÀÏ ±â°£ °øÁö
+--í˜„ì¬ê³µì§€ - ì¼ì£¼ì¼ ê¸°ê°„ ê³µì§€
 insert into notice(no, title, content, startDate)
-values (NOTICE_SEQ.nextval, '»çÀÌÆ®¿ÀÇÂ', 'ÁÁÀº ±Û ºÎÅ¹ÇÔ','2020-02-11');
+values (NOTICE_SEQ.nextval, 'ì‚¬ì´íŠ¸ì˜¤í”ˆ', 'ì¢‹ì€ ê¸€ ë¶€íƒí•¨','2020-02-11');
 
---Áö³­ °øÁö ÀÏÁÖÀÏ±â°£
+--ì§€ë‚œ ê³µì§€ ì¼ì£¼ì¼ê¸°ê°„
 insert into notice(no,title, content, startDate,enddate)
-values (NOTICE_SEQ.nextval, '»çÀÌÆ®¿ÀÇÂ','ÁÁÀº±Û ºÎÅ¹µå¸³´Ï´Ù.','2020-02-01','2020-02-03');
+values (NOTICE_SEQ.nextval, 'ì‚¬ì´íŠ¸ì˜¤í”ˆ','ì¢‹ì€ê¸€ ë¶€íƒë“œë¦½ë‹ˆë‹¤.','2020-02-01','2020-02-03');
 
---¿¹¾à°øÁö 200215¿¡ ¾÷·Îµå
+--ì˜ˆì•½ê³µì§€ 200215ì— ì—…ë¡œë“œ
 insert into notice(no, title, content, startDate)
-values(NOTICE_SEQ.nextval, '3¿ùÀº ½¬´Â³¯ÀÌ ¾ø½À´Ï´Ù.', 'Á¦°ğ³»','2020-02-15');
+values(NOTICE_SEQ.nextval, '3ì›”ì€ ì‰¬ëŠ”ë‚ ì´ ì—†ìŠµë‹ˆë‹¤.', 'ì œê³§ë‚´','2020-02-15');
 
 
 

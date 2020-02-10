@@ -1,4 +1,4 @@
---½Å±Ô°èÁ¤ + ±ÇÇÑ + ÃÊ±âºñ¹Ð¹øÈ£
+--ì‹ ê·œê³„ì • + ê¶Œí•œ + ì´ˆê¸°ë¹„ë°€ë²ˆí˜¸
 create user java11 IDENTIFIED by java11;
 
 grant connect, resource to java11;
