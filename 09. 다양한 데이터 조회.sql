@@ -22,6 +22,8 @@ select title 제목, content 내용 from board where writer = 'lee';
 -- 중복없이 데이터 불러오기
 select distinct writer from board;
 
+-- dual 없는 테이블을 가상으로 있다고 생각, 형식 맞추는 더미테이블
+select sysdate from dual
 
 
 
