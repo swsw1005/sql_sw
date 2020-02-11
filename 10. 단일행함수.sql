@@ -35,7 +35,19 @@ select substr('대한민국',-1,2) from dual;   --국
 select substr('대한민국',2,2) from dual;    --한민
 select substr('대한민국',3,2) from dual;    --민국
 
-select substrb('대한민국',4,6) from dual;
+select substrb('대한민국',1,6) from dual;   --대한
+select substrb('대한민국',2,6) from dual;   -- 한
+select substrb('대한민국',3,6) from dual;   -- 한
+select substrb('대한민국',4,6) from dual;   --한민
+select substrb('대한민국',5,6) from dual;   -- 민
+select substrb('대한민국',6,6) from dual;   -- 민
+select substrb('대한민국',7,6) from dual;   --민국
 
+
+select '가나다라마바사', instr('가나다라마바사' , '나다') 나다num from dual;
+
+
+select no, title, content, startdate, enddate from notice
+where instr(title, '이트') > 0;
 
 
