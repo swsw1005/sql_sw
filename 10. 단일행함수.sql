@@ -60,3 +60,10 @@ select replace('1111a111b111c111','1','2')from dual;
 select replace( '     a  b  c   ',' ') from dual; --abc
 
 
+-- 주민등록번호 뒷자리 6자리 * 표시
+
+--1번 방법
+select replace('921005-1234567', substr('921005-1234567',-6,6),'******') 
+from dual;
+--2번 방법
+select substr('921005-1234567',1,8) || '******' from dual;
