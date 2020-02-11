@@ -44,9 +44,19 @@ select '가나다라마바사', instr('가나다라마바사' , '나다') 나다
 select no, title, content, startdate, enddate from notice
 where instr(title, '3월') > 0;
 
-
+--  title 오른쪽 20자리 맞춰 -   title 왼쪽 20자리 맞춰 - 채우기
 select rpad(title,20,'-'), lpad(title,20,'-') from board;
-
+-- 그 둘을 합쳐서 ㅋㅋㅋ 라는 컬럼으로 출력
 select concat(rpad(title,20,'-'), lpad(title,20,'-')) ㅋㅋㅋ from board;
+
+--공백제거 trim
+select ltrim('abcdef','a') from dual;
+select ltrim('    a b c   ',' ')from dual;  -- a b c    오른쪽 공백 O
+-- 양 옆 공백 다 없애기
+select rtrim(ltrim('    a b c   ',' ') ,' ') from dual;
+-- 모든 '1'을  '2'으로 교체
+select replace('1111a111b111c111','1','2')from dual;
+-- 모든 공백 제거
+select replace( '     a  b  c   ',' ') from dual; --abc
 
 
