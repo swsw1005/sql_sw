@@ -135,7 +135,8 @@ from (
 where rnum between 1 and 5;
 --------------------------------------------------------
 
-
+insert into board(no, title, content, writer)
+values 
 
 --------------------------------------------------------
 
