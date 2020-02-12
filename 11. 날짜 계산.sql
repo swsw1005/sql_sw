@@ -47,10 +47,10 @@ where
 member.grade = grade.gradeno;
 
 
-select member.id, member.name, member.grade, grade.gradename
+select member.id, member.name, member.gradeNo, grade.gradename
 from member, grade g
 where
-m.grade = g.gradeno;
+m.gradeno = g.gradeno;
 -- > 테이블 명 grade, 컬럼명 grade 혼재되서 오류상태
 
 
@@ -74,10 +74,10 @@ where no in (select max(no) from board group by writer);
 
 
 
-select id, name, tel, m.grade, g.gradename
+select id, name, tel, m.gradeno, g.gradename
 from member m, grade g
 where
-m.grade = g.gradeno;
+m.gradeno = g.gradeno;
 
 
 --from  member sm, member am
