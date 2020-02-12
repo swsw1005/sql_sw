@@ -41,17 +41,48 @@ from member;
 
 
 --join
-select id, name, member.grade, gradename
+select id, name, member.grade, grade.gradename
 from member, grade
 where
 member.grade = grade.gradeno;
 
 
-select id, name, member.grade, gradename
-from member m, grade g
+select member.id, member.name, member.grade, grade.gradename
+from member, grade g
 where
 m.grade = g.gradeno;
 -- > 테이블 명 grade, 컬럼명 grade 혼재되서 오류상태
+
+
+-- 조회수 합계,   조회수 평균(소수점 컷)
+select sum(hit), trunc(avg(hit)) from board;
+
+
+-- 유저별 게시판 게시글 숫자
+select writer, count(*) from board
+group by writer;
+
+
+-- 전체 게시판 최신글 조회
+select no, title, content, writer from board
+where no = (select max(no) from board);
+
+
+-- 각 유저 별 최신글 모음
+select no, title, writer from board
+where no in (select max(no) from board group by writer);
+
+
+
+select id, name, tel, m.grade, g.gradename
+from member m, grade g
+where
+m.grade = g.gradeno;
+
+
+
+
+
 
 
 
