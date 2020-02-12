@@ -22,6 +22,7 @@ select concat(no,title) from board;
 select concat(no, concat(title, writedate)) from board;
 
 select '[' || no || ']' || title "no title" from board;
+-- [3]oracle
 
 -- 글자수 기준으로 자르기
 select substr('대한민국',1,2) from dual;    --대한
