@@ -80,6 +80,10 @@ where
 m.grade = g.gradeno;
 
 
+--from  member sm, member am
+-- 메세지 테이블...받는 사람  보내는 사람 같게 하면 안됨.
+-- 멤버테이블 두번 부른다
+
 
 
 
