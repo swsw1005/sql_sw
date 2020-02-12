@@ -47,6 +47,13 @@ where
 member.grade = grade.gradeno;
 
 
+select id, name, member.grade, gradename
+from member m, grade g
+where
+m.grade = g.gradeno;
+-- > 테이블 명 grade, 컬럼명 grade 혼재되서 오류상태
+
+
 
 
 -----------------
