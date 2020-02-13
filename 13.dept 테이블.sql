@@ -70,3 +70,13 @@ SELECT  * FROM emp;
 
 delete from emp;
 
+
+
+
+-- 그냥 불러오기
+select * from board;
+--정렬하여 불러오기
+select * from board order by no desc;
+-- 인덱스로 정렬하기
+select * from board
+where no>0;
