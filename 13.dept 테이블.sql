@@ -26,8 +26,14 @@ insert into dept values (20,'전산부');
 insert into dept values (30,'회계부');
 insert into dept values (40, '영업부');
 commit;
-select * from dept;
 
+--정렬없이 가져오기
+select * from dept;
+-- 정렬하여 불러오기 >> 정렬은 DB에서 금기사항
+select * from dept order by dcode;
+-- pri key 인덱스로 정렬하여
+select * from dept
+where dcode >0;
 
 
 -- 샘플데이터 입력 P.26
