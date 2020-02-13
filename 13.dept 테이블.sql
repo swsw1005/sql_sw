@@ -20,17 +20,14 @@ CREATE TABLE emp(
                      ON DELETE SET NULL -- 부서번호
 );
 
--- dept 데이터 추가 입력
--- P.31 하단 자료 참조
-INSERT INTO dept(dcode, dname, loc)
-VALUES (10, 'ACCOUNTING', 'NEW YORK');
-INSERT INTO dept(dcode, dname, loc)
-VALUES (20, 'RESEARCH', 'DALLAS');
-INSERT INTO dept(dcode, dname, loc)
-VALUES (30, 'SALES', 'CHICAGO');
-INSERT INTO dept(dcode, dname, loc)
-VALUES (40, 'OPERATIONS', 'BOSTON');
-COMMIT;
+--dept 부세 데이터
+insert into dept values (10,'기획부');
+insert into dept values (20,'전산부');
+insert into dept values (30,'회계부');
+insert into dept values (40, '영업부');
+commit;
+select * from dept;
+
 
 
 -- 샘플데이터 입력 P.26
@@ -44,28 +41,26 @@ INSERT INTO emp
 VALUES (7369,'SMITH','CLERK', 7902, '1980-12-17', 800, NULL, 20);
 INSERT INTO emp
 VALUES (7698,'BLAKE','MANAGER', 7839, '1981-05-01', 2850, NULL, 30);
-
 INSERT INTO emp
 VALUES (7499,'ALLEN','SALESMAN', 7698, '1981-02-20', 1600, 300, 30);
 INSERT INTO emp
 VALUES (7521,'WARD','SALESMAN', 7698, '1981-02-22', 1250, 500, 30);
 INSERT INTO emp
 VALUES (7654,'MARTIN','SALESMAN', 7698, '1981-09-28', 1250, 1400, 30);
-
 INSERT INTO emp
 VALUES (7782,'CLARK','MANAGER', 7839, '1981-06-09', 2450, NULL, 10);
 INSERT INTO emp
 VALUES (7788,'SCOTT','MANAGER', 7698, '1980-12-17', 800, NULL, 20);
 INSERT INTO emp
 VALUES (7844,'TURNER','SALESMAN', 7698, '1981-08-08', 1500, 0, 20);
-
 INSERT INTO emp
 VALUES (7876,'ADAMS','MANAGER', 7698, '1980-12-17', 800, NULL, 20);
 INSERT INTO emp
 VALUES (7900,'JAMES','ANALYST', 7698, '1981-12-03', 950, NULL, 30);
 INSERT INTO emp
 VALUES (7934,'MILLER','CLERK', 7782, '1982-01-23', 1300, NULL, 10);
-
 COMMIT;
 SELECT  * FROM emp;
+
+delete from emp;
 
