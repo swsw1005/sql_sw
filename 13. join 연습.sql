@@ -1,5 +1,3 @@
-
-
 -- 그냥 불러오기
 select *
 from board;
