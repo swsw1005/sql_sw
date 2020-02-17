@@ -71,15 +71,26 @@ declare
 vno board.no%type;
 vtitle board.title%type;
 vwriter board.writer%type;
-
 begin
     select no, title, writer into vno, vtitle, vwriter
     from board
     where no = &no;
     -- no값 입력받는 form 띄운다.
-    
+    dbms_output.put_line('------------요청하신 게시글임니다 고갱님--------------');
     DBMS_output.put_line(vno || ' / '|| vtitle||' / ' || vwriter );
+    dbms_output.put_line('------------------------------------------------------');
     end;
     /
     
+set verify off;
+
+--<< insert PL/SQL>>--
+-- 게시판 글쓰기
+
+
+
+
+
+
+  
     ------------------
