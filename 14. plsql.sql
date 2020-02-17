@@ -82,15 +82,30 @@ begin
     end;
     /
     
-set verify off;
+
+
+
 
 --<< insert PL/SQL>>--
 -- 게시판 글쓰기
+/
+set verify off;
+declare
+--변수선언 : 키보드 직접 입력   :=     << 입력 연산자
+vtitle board.title%type := '&title';
+--vtitle 변수선언 board.title 타입 그대로  키보드 입력받는다   &title 형식으로
+vcontent board.content%type := '&content';
+vwriter board.writer%type := '&writer';
 
-
-
-
-
+begin
+    insert into board(no, title, content, writer)
+    -- 게시판 입력한다
+    values( (select nvl(max(no),0)from board) + 1 , vtitle, vcontent, vwriter);
+    -- 입력한 v 시리즈 값을 입력받는다.
+    commit;-- 커밋까지 포함<< 이게바로 오토커밋!
+    
+    end;
+/
 
   
     ------------------
