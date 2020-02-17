@@ -16,3 +16,20 @@ where
 DBMS_OUTPUT.PUT_line (vno || '      ' || vname);
 end;
 /
+
+set serverout on;
+declare
+vno number(4);
+vtitle varchar2(50);
+vwriter varchar2(20);
+begin
+    select no, title, writer into vno, vtitle, vwriter
+    from board
+    where no = (select max(no) from board);
+    
+    DBMS_output.put_line(vno || '   '|| vtitle||'  ' || vwriter);
+    end;
+    /
+    
+    
+    ------------------
