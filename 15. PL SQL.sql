@@ -34,7 +34,7 @@ end;
 ----------------------------------------------
 
 -- 데이터 중 사원번호가 7902 사원번호, 이름, 부서번호, 부서명 출력
-
+-- if   elsif   else 이용
 declare 
 vempno emp.empno%TYPE;
 vename  emp.ename%TYPE;
@@ -67,7 +67,7 @@ end;
 ----------------------------------------------
 
 -- 데이터 중  사원번호, 이름, 부서번호, 부서명 출력
-
+-- case when then 이용
 declare 
 vempno emp.empno%TYPE;
 vename  emp.ename%TYPE;
@@ -80,8 +80,7 @@ select
 from emp
 where
   empno = &empno;
-  
-  
+
   vdeptname := case
     when vdeptno = 10 then  '기획부'
     when vdeptno = 20 then  '경리부'
@@ -95,5 +94,32 @@ dbms_output.put_line(
 end;
 /
 
+
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+
+-- 데이터 중  사원번호, 이름, 부서번호, 부서명 출력
+--join 이용
+declare 
+vempno emp.empno%TYPE;
+vename  emp.ename%TYPE;
+vdeptno  emp.deptno%TYPE;
+vdeptname  dept.dname%type;
+begin --데이터 가져오기
+select
+  e.empno,  e.ename,  e.deptno ,d.dname
+  into vempno,  vename,  vdeptno, vdeptname
+from emp e, dept d
+where
+  empno = &empno and d.dcode = e.deptno;
+  -- 왼쪽에  데이터 많이 줄이는 조건
+  -- 오른쪽부터 처리하면 시간 오래걸린다
+--
+-- 처리한 데이터 출력
+dbms_output.put_line(
+  vempno || ' / ' ||  vename || ' / ' ||  vdeptno  || ' / ' ||  vdeptname );
+end;
+/
 
 ---
