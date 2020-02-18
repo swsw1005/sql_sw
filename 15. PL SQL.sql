@@ -1,8 +1,9 @@
 --처리내용 화면에 보이기
-/
-set
-  serveroutput on;
+set serveroutput on;
 --묶음타입 만들어 쓰기p584
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
   declare -- 묶음 타입 만들기
   type emp_rec_type is record (
     emp_id emp.empno %type,
@@ -57,6 +58,8 @@ elsif(vdeptno = 40) then vdeptname := '전산부';
 end if;
 --
 -- 처리한 데이터 출력
+DBMS_output.put_line(' ');
+DBMS_output.put_line(' ');
 dbms_output.put_line(
   vempno || ' / ' ||  vename || ' / ' ||  vdeptno  || ' / ' ||  vdeptname );
 end;
@@ -89,6 +92,8 @@ where
 end ;
 --
 -- 처리한 데이터 출력
+DBMS_output.put_line(' ');
+DBMS_output.put_line(' ');
 dbms_output.put_line(
   vempno || ' / ' ||  vename || ' / ' ||  vdeptno  || ' / ' ||  vdeptname );
 end;
@@ -117,6 +122,8 @@ where
   -- 오른쪽부터 처리하면 시간 오래걸린다
 --
 -- 처리한 데이터 출력
+DBMS_output.put_line(' ');
+DBMS_output.put_line(' ');
 dbms_output.put_line(
   vempno || ' / ' ||  vename || ' / ' ||  vdeptno  || ' / ' ||  vdeptname );
 end;
