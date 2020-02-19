@@ -40,6 +40,18 @@ end;
 -- for 문 이용한 데이터 처리
 declare
     cursor  board_cur is
-        select no, title, writer
+        select no, title, writer , writedate, hit
+        from board
+        where no>0 and no <=20;
+        
+begin
+    for board_rec in board_cur
+     loop
+        dbms_output.put_line(board_rec.no || ' / '|| board_rec.title);
+    end loop;
+
+end;
+/
+        
 
 
