@@ -42,16 +42,40 @@ declare
     cursor  board_cur is
         select no, title, writer , writedate, hit
         from board
-        where no>0 and no <=20;
-        
+        where no>20 and no <=50;    
 begin
     for board_rec in board_cur
      loop
         dbms_output.put_line(board_rec.no || ' / '|| board_rec.title);
     end loop;
+end;
+/
+
+-- 프로시져 실행 단점 >>
+--  >>> 파일을 불러와서 실행하는 방식
+-- >>>>> 파일 없으면 실행 못한다.
+-- >>>>>>> 오라클에 이름 붙여서 저장해놓고,  이름만 부르면 실행되도록 하자
+-->>  저장 프로시져!!!!
+-->> view 만들때 생각해보자
+-- >> 실제 데이터는 없다.  여기저기서 땡겨쓰는 가상형식?
+
+create or replace  PROCEDURE up_sal
+(
+vempno emp.empno%type,
+vupsal number)
+is
+begin
+    update emp set sal = sal+vupsal
+    where empno = vempno;
+    commit;
 
 end;
 /
+
+
+--프로시져 불러와서 실행하는 한줄의 코드
+exec up_sal(7521,100000);
+
         
 
 
