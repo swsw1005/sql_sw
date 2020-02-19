@@ -19,23 +19,27 @@ begin
     --
     --무한반복
     loop
-    --
-    -- 데이터 처리 다 끝나면  반복문 빠져나온다.
-    fetch c1 into vempno, vename, vdeptno;
-    --
-    -- 데이터 처리 다 끝나면  loop 종료
-    exit when c1%notfound;
-    --
-    --
-    --
-    dbms_output.put_line(vempno || ' / ' || vename||' / '|| vdeptno);
-    
-    -- 루프 닫기
+        --
+        -- 데이터 처리 다 끝나면  반복문 빠져나온다.
+        fetch c1 into vempno, vename, vdeptno;
+        --
+        -- 데이터 처리 다 끝나면  loop 종료
+        exit when c1%notfound;
+        --
+        dbms_output.put_line(vempno || ' / ' || vename ||' / '|| vdeptno);
+        -- 루프 닫기
     end loop;
     --커서 닫기
     close c1;
 end;
 /
 
+
+
+
+-- for 문 이용한 데이터 처리
+declare
+    cursor  board_cur is
+        select no, title, writer
 
 
