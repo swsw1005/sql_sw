@@ -2,21 +2,21 @@
 -- 0. 메세지 보내기
 insert into message(no, content, sender, accepter)
 values (message_seq.nextval, '행운의편지' , 'lee123', 'admin');
+commit;
 --------------------------------------------
 ---------------------------------------------
 ---확인----
 select * from member;
 ---확인----
 select * from message;
+-- newmsgcnt 초기화
+update member set newmsgcnt =0;
 ---------------------------------------------
 ---------------------------------------------
 --  0. 최근 메세지 읽기
 update message set acceptdate = sysdate
-where accepter = 'admin' and no = 
-    (
-    select max(no) from message 
-    where accepter='admin' and acceptdate is null
-    );
+where no =  (select max(no) from message where (accepter = 'admin') and (acceptdate is null));
+
 -->> admin에게 온 메세지 중에 가장 최근 메세지를 읽는다
 -- (=acceptdate = syssdate)
 
@@ -61,17 +61,32 @@ create or replace trigger newMsg_read
 before update on message 
 for each row
 
-declare
-    vacceptdate message.acceptdate%type;
+BEGIN
+    update member set newmsgcnt = newmsgcnt - 1
+    where id = :new.accepter and vacceptdate is null;
+END;
+/
+---------------------------------------------
+-----------------------------------------------
+--2-2.  수정본
+
+create or replace trigger newMsg_read
+before update of acceptdate  on message 
+for each row
+
 begin
-    if( vacceptdate is null)
-        then
-        update member set newmsgcnt = newmsgcnt - 1
-        where id = :new.accepter;
-    end if;
+
+update member set newmsgcnt =( select count(no) from message
+where accepter = 'admin' and acceptdate is null)
+    where id = :new.accepter;
+       
 end;
 /
 -----------------------------------------
 -----------------------------------------------
--- newmsgcnt 초기화
-update member set newmsgcnt =0;
+--if (new.col1 != old.col1) 
+--or ( new.col1 is not null and old.col1 is null )
+--or ( old.col1 is not null and new.col1 is null )
+
+select count(no) from message
+where accepter = 'admin' and acceptdate is null;
