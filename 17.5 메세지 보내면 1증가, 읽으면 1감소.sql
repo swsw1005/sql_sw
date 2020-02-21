@@ -11,6 +11,9 @@ select * from member;
 select * from message;
 -- newmsgcnt 초기화
 update member set newmsgcnt =0;
+-------------------------
+delete from message;
+commit;
 ---------------------------------------------
 ---------------------------------------------
 --  0. 최근 메세지 읽기
@@ -58,35 +61,31 @@ END;
 --2-1. 메세지 읽으면 1감소 (accpetdate  is null 일때만
 
 create or replace trigger newMsg_read
-before update on message 
+after update on message 
 for each row
 
 BEGIN
+    if(:old.acceptdate is null and :new.acceptdate is not null)
+    -- old = null  and  new != null  이면 
+    then 
     update member set newmsgcnt = newmsgcnt - 1
-    where id = :new.accepter and vacceptdate is null;
+    where id = :new.accepter;
+    end if;    
 END;
 /
 ---------------------------------------------
 -----------------------------------------------
---2-2.  수정본
-
-create or replace trigger newMsg_read
-before update of acceptdate  on message 
-for each row
-
-begin
-
-update member set newmsgcnt =( select count(no) from message
-where accepter = 'admin' and acceptdate is null)
-    where id = :new.accepter;
-       
-end;
-/
------------------------------------------
------------------------------------------------
---if (new.col1 != old.col1) 
---or ( new.col1 is not null and old.col1 is null )
---or ( old.col1 is not null and new.col1 is null )
 
 select count(no) from message
 where accepter = 'admin' and acceptdate is null;
+
+
+
+update member
+set newmsgcnt =
+( select count(*) from message where message.accepter = 'admin' and message.acceptdate is null)
+where id = 'admin';
+
+
+
+
