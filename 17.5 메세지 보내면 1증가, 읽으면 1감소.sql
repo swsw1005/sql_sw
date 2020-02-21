@@ -22,7 +22,7 @@ where no =  (select max(no) from message where (accepter = 'admin') and (acceptd
 
 -- 0. 메세지 다시 읽기
 update message set acceptdate = sysdate
-where accepter = 'admin' and no = 
+where no = 
     (
     select max(no) from message 
     where accepter='admin'
