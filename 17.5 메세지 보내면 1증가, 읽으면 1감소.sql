@@ -15,6 +15,8 @@ update member set newmsgcnt =0;
 delete from message;
 commit;
 ---------------------------------------------
+select count(no) from message
+where accepter = 'admin' and acceptdate is null;
 ---------------------------------------------
 --  0. 최근 메세지 읽기
 update message set acceptdate = sysdate
@@ -76,8 +78,7 @@ END;
 ---------------------------------------------
 -----------------------------------------------
 
-select count(no) from message
-where accepter = 'admin' and acceptdate is null;
+
 
 
 
