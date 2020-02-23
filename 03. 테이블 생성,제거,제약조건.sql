@@ -20,3 +20,9 @@ CREATE TABLE member(
     photo varchar2(50)
 );
 
+
+
+--- 테이블 컬럼 추가
+alter table t_order2 add (ord_ea number);
+
+alter table t_order2 add (price_ea number);
